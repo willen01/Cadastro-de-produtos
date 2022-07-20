@@ -9,7 +9,7 @@ const deleteController = require("../controllers/deleteController");
 
 // buscar/listar produtos
 route.get("/listar/todos", readController.listarTodos);
-route.get("listar/pereciveis", readController.listarPereciveis)
+route.get("/listar/pereciveis", readController.listarPereciveis)
 route.get("/listar/npereciveis", readController.listarNPereciveis)
 
 
