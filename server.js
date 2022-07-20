@@ -6,6 +6,10 @@ const PORT = 8080;
 
 
 db
+
+//leitura do body enviado como json 
+app.use(express.json())
+
 app.use("/", router)
 
 app.listen(PORT, () => {
