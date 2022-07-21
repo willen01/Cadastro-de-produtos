@@ -1,5 +1,5 @@
-const PerecivelModel = require("../Models/CadastrarPereciveis");
-const NPerecivelModel = require("../Models/CadastrarNPereciveis");
+const ModelPereciveis = require("../Models/ModelPereciveis");
+const ModelNPereciveis = require("../Models/ModelNPereciveis");
 
 const updateController = {
     atualizarPerecivel: async (req, res) => {
@@ -7,7 +7,7 @@ const updateController = {
         let { quantidade, validade, preco } = req.body;
         let novosDados = { quantidade, validade, preco };
 
-        const produtoAtualizado = await PerecivelModel.findOneAndUpdate({ nome: nome }, novosDados);
+        const produtoAtualizado = await ModelPereciveis.findOneAndUpdate({ nome: nome }, novosDados);
 
         if (!produtoAtualizado) return res.status(404).json({ message: "Produto não encontrado, tente novamente" });
 
@@ -23,7 +23,7 @@ const updateController = {
         let { quantidade, validade, preco } = req.body;
         let novosDados = { quantidade, validade, preco };
 
-        const produtoAtualizado = await NPerecivelModel.findOneAndUpdate({nome : nome}, novosDados);
+        const produtoAtualizado = await ModelNPereciveis.findOneAndUpdate({nome : nome}, novosDados);
         if(!produtoAtualizado) return res.status(404).json({message: "Produto não encontrado, tente novamente"});
 
         try {

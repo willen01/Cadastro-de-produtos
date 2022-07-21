@@ -1,10 +1,10 @@
-const CadastrarPereciveis = require("../Models/CadastrarPereciveis");
-const CadastrarNPereciveis = require("../Models/CadastrarNPereciveis");
+const ModelPereciveis = require("../Models/ModelPereciveis");
+const ModelNPereciveis = require("../Models/ModelNPereciveis");
 
 const readController = {
     listarTodos: async (req, res) => {
-        const pereciveis = await CadastrarPereciveis.find({});
-        const npereciveis = await CadastrarNPereciveis.find({});
+        const pereciveis = await ModelPereciveis.find({});
+        const npereciveis = await ModelNPereciveis.find({});
         // busca  produtos pereciveis e não pereciveis no db
 
         try {
@@ -17,7 +17,7 @@ const readController = {
     },
 
     listarPereciveis: async (req, res) => {
-        const pereciveis = await CadastrarPereciveis.find({});
+        const pereciveis = await ModelPereciveis.find({});
         //busca pereciveis no db
 
         try {
@@ -28,7 +28,7 @@ const readController = {
     },
 
     listarNPereciveis: async (req, res) => {
-        const nPereciveis = await CadastrarNPereciveis.find({});
+        const nPereciveis = await ModelNPereciveis.find({});
         //busca não pereciveis no banco
 
         try {

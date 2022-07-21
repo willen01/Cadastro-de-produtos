@@ -1,11 +1,11 @@
-const Perecivel = require("../Models/CadastrarPereciveis");
-const NPerecivel = require("../Models/CadastrarNPereciveis");
+const ModelPerecivel = require("../Models/ModelPereciveis");
+const ModelNPerecivel = require("../Models/ModelNPereciveis");
 
 const deleteController = {
     deletarPerecivel: async (req, res) => {
         const produtoProcurado = req.params.nome;
 
-        const produtoDeletado = await Perecivel.findOneAndDelete({ nome: produtoProcurado });
+        const produtoDeletado = await ModelPerecivel.findOneAndDelete({ nome: produtoProcurado });
         if (!produtoDeletado) return res.status(404).json({ message: "Produto não encontrado, tente novamente!" });
 
         try {
@@ -18,7 +18,7 @@ const deleteController = {
     deletarNPerecivel: async (req, res) => {
         const produtoProcurado = req.params.nome;
 
-        const produtoDeletado = await NPerecivel.findOneAndDelete({ nome: produtoProcurado });
+        const produtoDeletado = await ModelNPerecivel.findOneAndDelete({ nome: produtoProcurado });
         if (!produtoDeletado) return res.status(404).json({ message: "Produto não encontrado, tente novamente!" });
 
         try {

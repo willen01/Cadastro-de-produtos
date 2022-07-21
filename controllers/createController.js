@@ -1,9 +1,9 @@
-const CadastrarPereciveis = require("../Models/CadastrarPereciveis");
-const CadastrarNPereciveis = require("../Models/CadastrarNPereciveis");
+const ModelPereciveis = require("../Models/ModelPereciveis");
+const ModelNPereciveis = require("../Models/ModelNPereciveis");
 
 const createController = {
     cadastrarPereciveis: async (req, res) => {
-        const cadastrarPereciveis = new CadastrarPereciveis({
+        const cadastrarPereciveis = new ModelPereciveis({
             nome: req.body.nome,
             quantidade: req.body.quantidade,
             validade: req.body.validade,
@@ -19,7 +19,7 @@ const createController = {
     },
 
     cadastrarNPereciveis: async (req, res) => {
-        const cadastrarNPereciveis = new CadastrarNPereciveis({
+        const cadastrarNPereciveis = new ModelNPereciveis({
             nome: req.body.nome,
             quantidade: req.body.quantidade,
             dataEntrada: req.body.dataEntrada
