@@ -1,7 +1,7 @@
 const ModelPereciveis = require("../Models/ModelPereciveis");
 const ModelNPereciveis = require("../Models/ModelNPereciveis");
 
-const updateController = {
+const atualizarProduto = {
     atualizarPerecivel: async (req, res) => {
         let nome = req.params.nome;
         let { quantidade, validade, preco } = req.body;
@@ -34,4 +34,4 @@ const updateController = {
     }
 }
 
-module.exports = updateController;
+module.exports = atualizarProduto;

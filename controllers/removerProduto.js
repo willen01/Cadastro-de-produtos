@@ -1,7 +1,7 @@
 const ModelPerecivel = require("../Models/ModelPereciveis");
 const ModelNPerecivel = require("../Models/ModelNPereciveis");
 
-const deleteController = {
+const removerProduto = {
     deletarPerecivel: async (req, res) => {
         const produtoProcurado = req.params.nome;
 
@@ -29,4 +29,4 @@ const deleteController = {
     }
 }
 
-module.exports = deleteController;
+module.exports = removerProduto;

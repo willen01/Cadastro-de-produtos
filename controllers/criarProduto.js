@@ -1,7 +1,7 @@
 const ModelPereciveis = require("../Models/ModelPereciveis");
 const ModelNPereciveis = require("../Models/ModelNPereciveis");
 
-const createController = {
+const cadastrarProduto = {
     cadastrarPereciveis: async (req, res) => {
         const cadastrarPereciveis = new ModelPereciveis({
             nome: req.body.nome,
@@ -34,4 +34,4 @@ const createController = {
     }
 }
 
-module.exports = createController;
+module.exports = cadastrarProduto;

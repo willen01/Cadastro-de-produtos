@@ -1,7 +1,7 @@
 const ModelPereciveis = require("../Models/ModelPereciveis");
 const ModelNPereciveis = require("../Models/ModelNPereciveis");
 
-const readController = {
+const listarProduto = {
     listarTodos: async (req, res) => {
         const pereciveis = await ModelPereciveis.find({});
         const npereciveis = await ModelNPereciveis.find({});
@@ -39,4 +39,4 @@ const readController = {
     }
 }
 
-module.exports = readController; 
+module.exports = listarProduto; 
