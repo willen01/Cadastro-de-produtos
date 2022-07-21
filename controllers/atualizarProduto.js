@@ -20,8 +20,8 @@ const atualizarProduto = {
 
     atualizarNPerecivel: async (req, res) => {
         let nome = req.params.nome;
-        let { quantidade, validade, preco } = req.body;
-        let novosDados = { quantidade, validade, preco };
+        let { quantidade, dataEntrada, preco } = req.body;
+        let novosDados = { quantidade, dataEntrada, preco };
 
         const produtoAtualizado = await ModelNPereciveis.findOneAndUpdate({nome : nome}, novosDados);
         if(!produtoAtualizado) return res.status(404).json({message: "Produto não encontrado, tente novamente"});

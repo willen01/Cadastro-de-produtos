@@ -22,7 +22,8 @@ const cadastrarProduto = {
         const cadastrarNPereciveis = new ModelNPereciveis({
             nome: req.body.nome,
             quantidade: req.body.quantidade,
-            dataEntrada: req.body.dataEntrada
+            dataEntrada: req.body.dataEntrada,
+            preco:req.body.preco
         })//recebe dados do body
 
         try {
