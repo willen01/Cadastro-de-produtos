@@ -25,6 +25,6 @@ route.put("/atualizar/nperecivel/:nome", updateController.atualizarNPerecivel);
 
 //deletar produto
 route.delete("/remover/perecivel/:nome", deleteController.deletarPerecivel);
-route.delete("remover/nperecivel/:nome", deleteController.deletarPerecivel)
+route.delete("/remover/nperecivel/:nome", deleteController.deletarNPerecivel)
 
 module.exports = route;
