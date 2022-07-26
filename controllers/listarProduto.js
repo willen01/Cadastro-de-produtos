@@ -16,6 +16,26 @@ const listarProduto = {
         }
     },
 
+    listarPorNome: async (req, res) => {
+        // coleta nome do produto procurado
+        let produtoProcurado = req.params.nome;
+
+        const pereciveis = await ModelPereciveis.find({nome: produtoProcurado});
+        const npereciveis = await ModelNPereciveis.find({nome: produtoProcurado});
+
+        let produtoEncontrado = [...pereciveis, ... npereciveis]
+
+        //trata erro para produto não encontrado
+        if (produtoEncontrado.length === 0) return res.status(404).json({ message: "Produto não encontrado" });
+
+
+        try {
+            res.status(200).json(produtoEncontrado);
+        } catch (error) {
+            res.status(400).json({message: error})
+        }
+    },
+
     listarPereciveis: async (req, res) => {
         const pereciveis = await ModelPereciveis.find({});
         //busca pereciveis no db
@@ -34,7 +54,7 @@ const listarProduto = {
         try {
             res.status(200).json(nPereciveis);
         } catch (error) {
-            res.status(400).json({message:`Erro ao buscar produtos ${error}`});
+            res.status(400).json({ message: `Erro ao buscar produtos ${error}` });
         }
     }
 }
