@@ -6,6 +6,7 @@ const criarProduto = require("../controllers/criarProduto");
 const listarProduto = require("../controllers/listarProduto");
 const atualizarProduto = require("../controllers/atualizarProduto");
 const removerProduto = require("../controllers/removerProduto");
+const { Router } = require("express");
 
 //cadastrar produtos
 route.post("/registrar/pereciveis", criarProduto.cadastrarPereciveis);
@@ -13,6 +14,7 @@ route.post("/registrar/npereciveis", criarProduto.cadastrarNPereciveis);
 
 // buscar/listar produtos
 route.get("/listar/todos", listarProduto.listarTodos);
+route.get("/listar/todos/:nome", listarProduto.listarPorNome)
 route.get("/listar/pereciveis", listarProduto.listarPereciveis)
 route.get("/listar/npereciveis", listarProduto.listarNPereciveis)
 
