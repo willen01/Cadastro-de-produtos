@@ -17,6 +17,7 @@ Para testar a aplicação faça solicitações aos endPoints abaixo com Rest Cli
 | /registrar/pereciveis | POST | cadastro de produtos pereciveis|
 | /registrar/npereciveis | POST | cadastro de produtos não prereciveis |
 | /listar/todos | GET | exibe todos os produtos cadastrados |
+| /listar/todos/:nome | GET | exibe produto pelo nome buscado|
 | /listar/pereciveis | GET | exibe produtos pereciveis |
 | /listar/npereciveis | GET | exibe produtos não pereciveis |
 | /atualizar/perecivel/:nome | PUT | atualiza produtos pereciveis pelo nome |
